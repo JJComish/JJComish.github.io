@@ -22,6 +22,11 @@ body, html {
   background-size: cover;
 }
 
+.shuffle {
+    position: relative;
+    left: 100px;
+}
+
 /* First image (Logo. Full height) */
 .bgimg-1 {
   background-image: url('Cover.jpg');
@@ -62,18 +67,20 @@ body, html {
     <a href="#home" class="w3-bar-item w3-button">HOME</a>
     <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
     <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> PORTFOLIO</a>
-    <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+    <!--<a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
       <i class="fa fa-search"></i>
-    </a>
+       
+    </a> -->
   </div>
 
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
     <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
     <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
-    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
-    <a href="#" class="w3-bar-item w3-button">SEARCH</a>
+    <!--<a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+    <a href="#" class="w3-bar-item w3-button">SEARCH</a> -->
+   
   </div>
 </div>
 
@@ -87,17 +94,34 @@ body, html {
 <!-- Container (About Section) -->
 <div class="w3-content w3-container w3-padding-64" id="about">
   <h3 class="w3-center">ABOUT ME</h3>
-  <p class="w3-center"><em>I am currently in my third year pursuing my degree in software engineering at the University of Victoria. I have found my passion in user experience and designing user interfaces, so this is where I am hoping to specialize.</em></p>
-  <p>This is my personal website to practice my web development skills and become familiar with different web programming tools. It also serves as a place to host my currently active projects. The goal is to improve the website alongside my skills in HTML, CSS, and JS and to highlight my projects, both past and present, better than linkedin or my resume can.</p>
+  <p class="w3-center"><em>I am currently in my third year pursuing my degree in software engineering at 
+      the University of Victoria. I have found my passion in user experience and designing user interfaces,
+       so this is where I am hoping to specialize.</em></p>
+  <p>This is my personal website to practice my web development skills and become familiar with different web 
+      programming tools. It also serves as a place to host my currently active projects. The goal is to improve 
+      the website alongside my skills in HTML, CSS, and JS and to highlight my projects, both past and present, 
+      better than linkedin or my resume can.</p>
+
+<div class ="w3-row">
+    <div class = "w3-container shuffle"> <p><b shuffle><i class="fa fa-user w3-margin-right"></i> Juan James Comish</b></p>
+    </div>
+</div>
   <div class="w3-row">
     <div class="w3-col m6 w3-center w3-padding-large">
-      <p><b><i class="fa fa-user w3-margin-right"></i> Juan James Comish</b></p><br>
-      <img src="JuanProfile.jpeg" class="w3-round w3-image " alt="Photo of Me" width="500" height="333">
+        
+        <img src="JuanProfile.jpeg" class="w3-round w3-image " alt="Photo of Me" width="500" height="333">
     </div>
 
     <!-- Hide this text on small devices -->
     <div class="w3-col m6 w3-hide-small w3-padding-large">
-      <p> Welcome to my website. </p>
+      <p> Welcome to my website. I have a huge drive for improving usability and accessibility and advocating 
+          for proper usability testing and design in products from the ground up. In my experience there have 
+          been products that have little to no consideration for usability in their design. It should be obvious 
+          and well known that retroactively dealing with any issues from mismatched requirements, bugs, or redesigns
+           places a cost multiplier on the work done. It is far cheaper and creates a far better product to put the 
+           systems and tools to deal with these issues in place from the beginning. I am passionate about this message
+            and intend to be a strong advocate for it.
+        </p>
     </div>
   </div>
 
@@ -139,7 +163,7 @@ body, html {
 <!-- Second Parallax Image with Portfolio Text -->
 <div class="bgimg-2 w3-display-container w3-opacity-min">
   <div class="w3-display-middle">
-    <span class="w3-xxlarge w3-text-white w3-wide">PORTFOLIO</span>
+    <span class="w3-xxlarge w3-black w3-text-white w3-wide">PORTFOLIO</span>
   </div>
 </div>
 
@@ -150,36 +174,51 @@ body, html {
 
   <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
   <div class="w3-row-padding w3-center">
-    <div class="w3-col m3">
+    <div class="w3-col m6">
 	  <img src="BCFerries.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="BC Ferries Accessibility Design Project (First Place Competition Winner)">
-	  <p>In my first year of the Software Engineering program at UVic the entire year was
-          tasked with desinging a solution for the lack of efficient accesibility options with 
-          the boarding process for BC Ferries. Judged by members BC Ferries Executives and Members 
-          of the Engineering Faculties my four person team's ADEPT design<!-- Replace with spell out of the acronym-->
-        tied for first place. <br><br>
+	  <p> 
+        In my first semester of the Software Engineering program at UVic the entire year was
+        tasked with desinging a solution for the lack of efficient accesibility options with 
+        the boarding process for BC Ferries. As a member of a four person team, following the Tuckman team design cycle, we developed a solution to BC Ferries’ terminal 
+        accessibility problem named A.D.E.P.T (Alternative Disabled Electric Personal Transport). Judged by members BC Ferries Executives 
+        and Members of the Engineering Faculties the project won first place.
+<br><br>
         Click <a href="https://www.bcferries.com/bcferries/faces/attachments?id=933474"> here</a> to go the BC Ferries News Release for the project.
     </p>
     </div>
 
-    <div class="w3-col m3">
+    <div class="w3-col m6">
       <img src="ChatCity.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Chatcity GUI">
       <p> Early in my second year of the Software Engineering program at UVic as a part of my Software Architecture and Design class
-          2 other students and I were tasked with desinging and programing a chat communication system
+          2 other students and I were tasked with documenting, desinging, and programing a chat communication system
           that used python sockets. Without any prior knowledge of network programming or the writing of web applications
-          we developed Chatcity.<br><br>
+          we developed Chatcity. Using Python sockets, multithreading, and PyGui implemented the system on schedule and 
+          meeting all requirements.<br><br>
 
           Click <a href="https://github.com/Athenasko/SENG299-Phase4"> here</a> to go the github repository for the project.
       </p>
     </div>
-
-    <div class="w3-col m3">
-      <img src="/w3images/p3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bear closeup">
+</div>
+   <div class="w3-row-padding w3-center">
+    <div class="w3-col m6">
+      <img src="ONCRobot.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Prototype autonomous robot for Oceans Network Canada">
+      <p> 
+        Using Vex components, programming in robot C and as a member of a three person team designed and implemented a 
+        prototype for an autonomous sensor cleaning deployment robot. The robot possessed mobility that would not damage 
+        sensitive terrain, was able to detect the IR emitted by the sensor beacon and was able to deploy a weighted mock 
+        sensor cleaner.</p>
     </div>
 
-    <div class="w3-col m3">
-      <img src="/w3images/p4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Quiet ocean">
+    <div class="w3-col m6">
+      <img src="/w3images/p4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Ocean Networks Canada Data Preview 2.0 Design Project">
+      <p>
+        Worked alongside three other engineering students in a cross-disciplinary design project. The project involved 
+        requirements gathering and solution design for improving or replacing ONC’s Data Preview 2.0 with a more accessible 
+        and user friendly version.</p>
     </div>
   </div>
+</div>
+
 
   <div class="w3-row-padding w3-center w3-section">
     <div class="w3-col m3">
@@ -189,15 +228,9 @@ body, html {
     <div class="w3-col m3">
       <img src="/w3images/p6.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="My beloved typewriter">
     </div>
-
-    <div class="w3-col m3">
-      <img src="/w3images/p7.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Empty ghost train">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="/w3images/p8.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sailing">
-    </div>
+    <!--
     <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button>
+    -->
   </div>
 </div>
 
@@ -261,6 +294,9 @@ body, html {
     <i class="fa fa-linkedin w3-hover-opacity">
         <form action="https://www.linkedin.com/in/j-james-comish/"> </form>
     </i>
+    <a>
+        
+    </a>
   </div>
 </footer>
  
