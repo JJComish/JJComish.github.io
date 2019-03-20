@@ -27,6 +27,10 @@ body, html {
     left: 100px;
 }
 
+.projectimg {
+    max-height: 10px;
+}
+
 /* First image (Logo. Full height) */
 .bgimg-1 {
   background-image: url('Cover.jpg');
@@ -67,6 +71,7 @@ body, html {
     <a href="#home" class="w3-bar-item w3-button">HOME</a>
     <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
     <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> PORTFOLIO</a>
+    <a href="projects.html" class="w3-bar-item w3-button w3-hide-small"> JS Projects</a>
     <!--<a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
       <i class="fa fa-search"></i>
@@ -78,6 +83,7 @@ body, html {
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
     <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
     <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
+    <a href="projects.html" class="w3-bar-item w3-button" onclick="toggleFunction()"> JS Projects</a>
     <!--<a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
     <a href="#" class="w3-bar-item w3-button">SEARCH</a> -->
    
@@ -87,7 +93,7 @@ body, html {
 <!-- First Parallax Image with Logo Text -->
 <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
   <div class="w3-display-middle" style="white-space:nowrap;">
-    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">J. James <span class="w3-hide-small">Comish</span>
+    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">J. James Comish</span>
   </div>
 </div>
 
@@ -103,7 +109,7 @@ body, html {
       better than linkedin or my resume can.</p>
 
 <div class ="w3-row">
-    <div class = "w3-container shuffle"> <p><b shuffle><i class="fa fa-user w3-margin-right"></i> Juan James Comish</b></p>
+    <div class = "w3-col w3-container m6 w3-center"> <p> <i class="fa fa-user w3-margin-right"></i> Juan James Comish</b></p>
     </div>
 </div>
 
@@ -134,43 +140,103 @@ body, html {
   <div>
     <p class = "w3-large w3-center w3-padding-16"> Technical Skills:</p>
     <div class = "w3-row">
-        <div class = "w3-col m3 w3-center w3-padding-small">
+        <div class = "w3-col m6 w3-center w3-padding-small">
             <p> Python</p>
-            <p> Todo </p>
+            <p class = "w3-hide-small"> Being the first language I learned back in highschool, I have used Python for many projects.
+                Most notably of late I used it in a software security class to script some encyrption/decryption exercises.
+                The largest project to use Python is probably Chatcity 1.0 with the use of 
+                Python sockets and the attempted use of multithreading in Python. </p>
         </div>
-        <div class = "w3-col m3 w3-center w3-padding-small">
+        <div class = "w3-col m6 w3-center w3-padding-small">
             <p> C</p>
-            <p> Todo </p>
+            <p class = "w3-hide-small"> The first language taught at the University level and a staple of many of the more
+                computer engineering focused classes. I have used C to program on microcontrollers,
+                to investigate u-threads and p-threads, and used a variant of the language (Robot C) to
+                program a autonomus robot to navigate it's environment and locate an IR beacon. </p>
         </div>
-        <div class = "w3-col m3 w3-center w3-padding-small">
-            <p> HTML </p>
-            <p> Todo </p>
-        </div>
-        <div class = "w3-col m3 w3-center w3-padding-small">
-            <p> CSS </p>
-            <p> Todo </p>
-        </div>
-
     </div>
+
     <div class = "w3-row">
-        <div class = "w3-col m3 w3-center w3-padding-small">
+        <div class = "w3-col m6 w3-center w3-padding-small">
+            <p> HTML </p>
+            <p class = "w3-hide-small"> One of the more recent languages I've spent real time with
+                in my first year of Software Engineering at UVic there was some time spent learning
+            the basics of reading HTML and understanding but very little practical experience.
+            This website is my practical expereince proejct. </p>
+        </div>
+        <div class = "w3-col m6 w3-center w3-padding-small">
+            <p> CSS </p>
+            <p class = "w3-hide-small">  CSS goes hand in hand with HTML. My learning of CSS follows
+                a very similar path to HTML and is also one of the main focuses of this website. </p>
+        </div>
+    </div>
+    
+    <div class = "w3-row">
+        <div class = "w3-col m6 w3-center w3-padding-small">
             <p> Bash</p>
-            <p> Todo </p>
+            <p class = "w3-hide-small"> Having not spent a lot of time writing Bash scripts, although
+                some would argue that that is a good thing, my experience with Bash has been more about
+            using terminals to experiment with other tools such as the time spent in a software security
+        class using the tools used to attack and defend from certain well known vulnerabilities. </p>
         
         </div>
-        <div class = "w3-col m3 w3-center w3-padding-small">
+        <div class = "w3-col m6 w3-center w3-padding-small">
             <p> SQL</p>
-            <p> Todo </p>
-        </div>
-        <div class = "w3-col m3 w3-center w3-padding-small">
-            <p> Javascript</p>
-            <p> Todo </p>
-        </div>
-        <div class = "w3-col m3 w3-center w3-padding-small">
-            <p> Git</p>
-            <p> Todo </p>
+            <p class = "w3-hide-small">  Starting with my QA Co-op fiddling with SQL server instances
+                (mostly focused on fiddling with data to test the reliability of the systems in place)
+            my SQL experience has skyrocketed with the addition of a database class at UVic focused on gaining
+        hands on SQL programming experience. </p>
         </div>
     </div>
+    <div class = "w3-row">
+        <div class = "w3-col m6 w3-center w3-padding-small">
+            <p> Javascript</p>
+            <p class = "w3-hide-small"> My introduction into Javascript was through Battlesnake. The coding
+                competition was my way of diving into the language and being forced to just figure it out. After
+            the competition in 2019 I've launched into side projects (such as this website) to attempt to gain a better
+        mastery of the language. </p>
+        </div>
+        <div class = "w3-col m6 w3-center w3-padding-small">
+            <p> Git</p>
+            <p class = "w3-hide-small"> Across many class projects and personal projects I've practiced increasingly with
+                Git and the development tools offered by both Github and Gitlab. With my latest experiences in Software Evolution 
+            the use of Gitlab's CI's tools has become a goal for larger projects. </p>
+        </div>
+    </div>
+    <!-- More similar rows to be filled with the other technical skills from my resume if I so choose
+    <div class = "w3-row">
+        <div class = "w3-col m6 w3-center w3-padding-small">
+            <p> Javascript</p>
+            <p class = "w3-hide-small"> Todo </p>
+        </div>
+        <div class = "w3-col m6 w3-center w3-padding-small">
+            <p> Git</p>
+            <p class = "w3-hide-small"> Todo </p>
+        </div>
+    </div>
+    <div class = "w3-row">
+        <div class = "w3-col m6 w3-center w3-padding-small">
+            <p> Javascript</p>
+            <p class = "w3-hide-small"> Todo </p>
+        </div>
+            <div class = "w3-col m6 w3-center w3-padding-small">
+                <p> Git</p>
+                <p class = "w3-hide-small"> Todo </p>
+            </div>
+        </div>
+    <div class = "w3-row">
+        <div class = "w3-col m6 w3-center w3-padding-small">
+            <p> Javascript</p>
+            <p class = "w3-hide-small"> Todo </p>
+        </div>
+        <div class = "w3-col m6 w3-center w3-padding-small">
+            <p> Git</p>
+            <p class = "w3-hide-small"> Todo </p>
+        </div>
+        -->
+    </div>
+    
+
 
   <!-- Softer Skills-->
 
@@ -216,7 +282,7 @@ body, html {
 <!-- Container (Portfolio Section) -->
 <div class="w3-content w3-container w3-padding-64" id="portfolio">
   <h3 class="w3-center">MY WORK</h3>
-  <p class="w3-center"><em>Here are some of my latest Projects.<br> Click on the images to make them bigger</em></p><br>
+  <p class="w3-center"><em>Here are some of my latest Projects.</em></p><br>
 
   <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
   <div class="w3-row-padding w3-center">
@@ -260,11 +326,15 @@ body, html {
 
     <div class="w3-col m6">
         <p>ONC Data Preview 2.0</p> 
-      <img src="ONCDataPreview.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Ocean Networks Canada Data Preview 2.0 Design Project">
+      <img src="ONCDataPreview.png" style=" width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Ocean Networks Canada Data Preview 2.0 Design Project">
       <p>
         Worked alongside three other engineering students in a cross-disciplinary design project. The project involved 
         requirements gathering and solution design for improving or replacing ONC’s Data Preview 2.0 with a more accessible 
-        and user friendly version.</p>
+        and user friendly version. The project consisted of key milestones including: a technical literature review, a feasibility study, a requirements specification document, and a final report<br><br>
+
+        Click <a href="https://docs.google.com/document/d/12sBChLesU6DlO4QUY66Z4huwP07hLg21tWSCAoDPMzc/edit?usp=sharing"> here</a> to go the google drive for the final report from the project.</p>
+
+        
     </div>
   </div>
 </div>
@@ -328,9 +398,8 @@ body, html {
 <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
   <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
   <div class="w3-xlarge w3-section">
-    <i class="fa fa-linkedin w3-hover-opacity">
-        <form action="https://www.linkedin.com/in/j-james-comish/"> </form>
-    </i>
+    <a href="https://www.linkedin.com/in/j-james-comish/"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+
     <a>
         
     </a>
