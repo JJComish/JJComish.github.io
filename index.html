@@ -100,13 +100,12 @@ body, html {
 <!-- Container (About Section) -->
 <div class="w3-content w3-container w3-padding-64" id="about">
   <h3 class="w3-center">ABOUT ME</h3>
-  <p class="w3-center"><em>I am currently in my third year pursuing my degree in software engineering at 
+  <p class="w3-center"><em>I am currently in my final year pursuing my degree in software engineering at 
       the University of Victoria. I have found my passion in user experience and designing user interfaces,
        so this is where I am hoping to specialize.</em></p>
   <p>This is my personal website to practice my web development skills and become familiar with different web 
-      programming tools. It also serves as a place to host my currently active projects. The goal is to improve 
-      the website alongside my skills in HTML, CSS, and JS and to highlight my projects, both past and present, 
-      better than linkedin or my resume can.</p>
+      programming tools. The goal is to improve the website alongside my skills in HTML, CSS, and JS and to 
+      highlight my projects, both past and present, better than Linkedin or my resume can.</p>
 
 <div class ="w3-row">
     <div class = "w3-col w3-container m6 w3-center"> <p> <i class="fa fa-user w3-margin-right"></i> Juan James Comish</b></p>
@@ -116,7 +115,7 @@ body, html {
   <div class="w3-row">
     <div class="w3-col m6 w3-center w3-padding-large">
         
-        <img src="JuanProfile.jpeg" class="w3-round w3-image " alt="Photo of Me" width="500" height="333">
+        <img src="JuanProfile2.JPG" class="w3-round w3-image " alt="Photo of Me" width="500" height="333">
     </div>
 
     <!-- Hide this text on small devices -->
@@ -163,7 +162,13 @@ body, html {
                 projects I enrolled in an advanced programming techniques for C++ class at the University of Victoria. While it was probably
                 one of the hardest classes I have taken it was also a constant string of learning moments. </p>
         </div>
-        <!-- TODO: Add another tech item to this row and possibly other rows (sonar qube? Selenium? other items from 426/440?) -->
+
+        <div class = "w3-col m6 w3-center w3-padding-small">
+            <p> SonarQube</p>
+            <p class = "w3-hide-small"> As part of a Software Quality Engineering project I was introduced to the code quality and security testing tool SonarQube.
+                Requiring only a small amount of time to eliminate false negatives the number of valuable catches that lead to code quality improvements was insipring. 
+                Easily included into continous integration pipelines and supporiting 27 languages it is a tool I plan on becoming more familiar with. </p>
+        </div>
     </div>
 
     <div class = "w3-row">
@@ -277,7 +282,7 @@ body, html {
     Months of Co-op
   </div>
   <div class="w3-third w3-section">
-    <span class="w3-xlarge">Countless</span><br>
+    <span class="w3-xlarge">12+</span><br>
     Successful Team Projects
   </div>
 </div>
@@ -295,35 +300,83 @@ body, html {
   <p class="w3-center"><em>Here are some of my latest Projects.</em></p><br>
 
   <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
-  <div class="w3-row-padding w3-center">
-    <div class="w3-col m6">
-        <p>ADEPT</p>
-	  <img src="BCFerries.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="BC Ferries Accessibility Design Project (First Place Competition Winner)">
-	  <p> 
-        In my first semester of the Software Engineering program at UVic the entire year was
-        tasked with desinging a solution for the lack of efficient accesibility options with 
-        the boarding process for BC Ferries. As a member of a four person team, following the Tuckman team design cycle, we developed a solution to BC Ferries’ terminal 
-        accessibility problem named A.D.E.P.T (Alternative Disabled Electric Personal Transport). Judged by members BC Ferries Executives 
-        and Members of the Engineering Faculties the project won first place.
-<br><br>
-        Click <a href="https://www.bcferries.com/bcferries/faces/attachments?id=933474"> here</a> to go the BC Ferries News Release for the project.
-    </p>
-    </div>
 
+  <div class="w3-row-padding w3-center">    <!-- *** ROW 1 ***-->
     <div class="w3-col m6">
-        <p>Chatcity 1.0</p>
-      <img src="ChatCity.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Chatcity GUI">
-      <p> Early in my second year of the Software Engineering program at UVic as a part of my Software Architecture and Design class
-          2 other students and I were tasked with documenting, desinging, and programing a chat communication system
-          that used python sockets. Without any prior knowledge of network programming or the writing of web applications
-          we developed Chatcity. Using Python sockets, multithreading, and PyGui implemented the system on schedule and 
-          meeting all requirements.<br><br>
+        <p>Virtual Board Game Engine by Emoj</p> 
+      <img src="Virtual_Boardgame_Example.png" style=" width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A Hand of Poker in the Virtual Boardgame Engine by Emoj.">
+      <p>
+        Worked alongside three other software engineering students for our capstone design project. The project involved finding a sponser, desiging, and implenting a novel project of our conecption.
+        The focus of our project was creating a web application to support the creation and usuage of templates for virtual board games to allow for people to safely play games together durring Covid-19 isolation.
+        Through and iterative design process the Virtual Board Game Engine was created using Django, Postgres, Axios, and Vue.
+        <br><br>
 
-          Click <a href="https://github.com/Athenasko/SENG299-Phase4"> here</a> to go the github repository for the project.
-      </p>
+        Click <a href="https://github.com/miroesli/emoj"> here</a> to go the to the repository for the project.</p>
     </div>
+    
+    <div class="w3-col m6">
+        <p>Scentive</p> 
+      <img src="Scentive.png" style=" width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A portion of the Scentive prototype.">
+      <p>
+          <!-- TODO: Rewrite -->
+          As a practice exercise in requirements engineering groups of students acted as both the client and the designer. My team worked with the "company" meal4life to walk through the process of 
+          starting with requirements gathering and ending with prototypes. Prototypes of all levels were created including high fidelity prototypes created using Figma.
+          <br><br>
+
+          Click <a href="https://sites.google.com/view/c-wall/home"> here</a> to go the to our client website for the project.</p>
+          
+    </div> 
 </div>
-   <div class="w3-row-padding w3-center">
+
+<div class="w3-row-padding w3-center"> <!-- *** ROW 2 ***-->
+    <div class="w3-col m6">
+        <p>Motion Estimation on Embedded System</p>
+      <img src="MotionEstimation.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Motion Estimation Embedded System's Project">
+      <p> 
+          <!-- TODO: Rewrite -->
+        My partner Marcin Leciej and I were tasked with writting a program for an embedded system that used the sum of absolute differences algorithm for calculating the vectors when attempting motion estimation between two images.
+        The goal of the project was to write the most efficient implementation that would then be run on a 32 bit ARM processor.
+        The project was done in three stages. An initial naive implementation was written in pure C where the only optimization was using cache efficient array traversal.
+        The second iteration of the program used Neon Intrinsics and software pipelining to reduce the number of cycles required to compute the SAD values. The final iteration 
+        invovled assembly inlining that would be used if the a new hardware supported instruction could be implemented. Alongside this code 
+        was the design of the theoretical hardware instruction.</p>
+    </div>
+        <div class="w3-col m6">
+            <p>John Conway's Game of Life in C++ with NCurses</p>
+          <img src="GameOfLife.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Part way through simulating R-pentomino.">
+          <p> 
+              <!-- TODO: Rewrite -->
+            As a final demonstration of the programming techniques learned for "Advanced Programming Techniques for Robust Efficient Computing (With C++)" I created an program that 
+            when provided with the starting pattern and series of optional parameters simulates John Conway's Game of Life.</p>
+        </div>
+  </div>
+
+  <div class="w3-row-padding w3-center"> <!-- *** ROW 3 ***-->
+    <div class="w3-col m6">
+        <p>Neptune Banking</p>
+      <img src="Neptune.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The Landing page for Neptune Banking">
+      <p> 
+        Neptune Banking was a mock legacy banking application that used a Spring Boot (Java) back-end and Node Js front-end. It suffered from a series of bugs, code quality and security issues, and missing features. 
+        Working in a team of 6 a requirements specification document was written to match provided version of the application along with a list of desired features.
+        A continous integration pipleine was implemented using Jenkins that, following a peer code review of merge requests, performed unit tests, front-end tests with Selenium, and scanned the application for 
+        code quality and security issues using SonarQube. Over the course of 4 months bugs were fixed, features were implemented, and unit tests and front-end tests were written. 
+        Performance testing was done using Apache Jmeter with Perfmon. Security and penetration testing was conducted using OWasp Zap.</p>
+    </div>
+
+    <div class="w3-col m6">
+        <p>SimpleStockShare</p> 
+      <img src="threeS.png" style=" width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Ocean Networks Canada Data Preview 2.0 Design Project">
+      <p>
+        SimpleStockShare is a mock stock trading application that is designed with software scalability in mind. Originally started in a team of three but maintained after one of the developers 
+        stopped contributing and then dropped out of the class. The application was broken into a series of dockerized components to allow for distribution across resources. The application had strict requirements
+        including the use of a preexisting server that supplied the quoted values of stocks. The main transaction server componenet used Spring Boot. Quotes from the legacy quote server were stored, where applicable, 
+        in a cache implemented using Redis. The application used Glowroot for performance analysis and a workload generator written in Python designed to simulate n users simultaneously making transacion requests. 
+        The final implementation of the application easily supported 1200 concurrent users with an average transaciton speed of ~25,000 transactions per minute.</p>
+    </div>
+    
+  </div>
+
+   <div class="w3-row-padding w3-center"> <!-- *** ROW 4 ***-->
     <div class="w3-col m6">
         <p>Jeff the Robot</p>
       <img src="ONCRobot.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Prototype autonomous robot for Oceans Network Canada">
@@ -342,11 +395,44 @@ body, html {
         requirements gathering and solution design for improving or replacing ONC’s Data Preview 2.0 with a more accessible 
         and user friendly version. The project consisted of key milestones including: a technical literature review, a feasibility study, a requirements specification document, and a final report<br><br>
 
-        Click <a href="https://docs.google.com/document/d/12sBChLesU6DlO4QUY66Z4huwP07hLg21tWSCAoDPMzc/edit?usp=sharing"> here</a> to go the google drive for the final report from the project.</p>
+        Click <a href="https://docs.google.com/document/d/12sBChLesU6DlO4QUY66Z4huwP07hLg21tWSCAoDPMzc/edit?usp=sharing"> here</a> to go to the google drive for the final report from the project.</p>
 
-        <!--TODO: add 426 project, 440 project, 488 project, 475 project, 468 project, maybe even 321 fake requirements projects  -->
+        <!--TODO: add 426 project, 440 project, 499 project, 475 project, 468 project, maybe even 321 fake requirements projects  -->
     </div>
   </div>
+  
+
+  <div class="w3-row-padding w3-center"> <!-- *** ROW 5 ***-->
+    
+    <div class="w3-col m6">
+        <p>ADEPT</p>
+        <img src="BCFerries.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="BC Ferries Accessibility Design Project (First Place Competition Winner)">
+        <p> 
+            In my first semester of the Software Engineering program at UVic the entire year was
+            tasked with desinging a solution for the lack of efficient accesibility options with 
+            the boarding process for BC Ferries. As a member of a four person team, following the Tuckman team design cycle, we developed a solution to BC Ferries’ terminal 
+            accessibility problem named A.D.E.P.T (Alternative Disabled Electric Personal Transport). Judged by members BC Ferries Executives 
+            and Members of the Engineering Faculties the project won first place.
+        <br><br>
+            Click <a href="https://www.bcferries.com/bcferries/faces/attachments?id=933474"> here</a> to go the BC Ferries News Release for the project.
+        </p>
+    </div>
+
+    <div class="w3-col m6">
+        <p>Chatcity 1.0</p>
+      <img src="ChatCity.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Chatcity GUI">
+      <p> Early in my second year of the Software Engineering program at UVic as a part of my Software Architecture and Design class
+          2 other students and I were tasked with documenting, desinging, and programing a chat communication system
+          that used python sockets. Without any prior knowledge of network programming or the writing of web applications
+          we developed Chatcity. Using Python sockets, multithreading, and PyGui implemented the system on schedule and 
+          meeting all requirements.<br><br>
+
+          Click <a href="https://github.com/Athenasko/SENG299-Phase4"> here</a> to go the github repository for the project.
+      </p>
+    </div>
+  </div>
+
+
 </div>
 </div>
 
