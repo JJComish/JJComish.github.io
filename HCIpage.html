@@ -6,6 +6,7 @@
 <!-- <script src="http://d3js.org/d3.v6.min.js" charset="utf-8"></script> -->
 <!-- If this doesn't work try something more like this? -->
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.9/d3.min.js"></script>
+<script type="text/javascript" src="experiment.js"></script>  
 
 <!-- CSS Styling For the page goes here [replace with proper styling sheet] -->
  <style>
@@ -45,15 +46,15 @@
 	
         <!-- Replace with a better button for triggering the start of the generation of the d3 svg generation and such? -->
         <div id="myDIV">
-                <button onclick="testFunction()">Start Experiment!</button>
+                <button onclick="startExperiment()">Start Experiment!</button>
         </div>
-        <div id="nextDIV">
-                <button onclick="testFunction()">Next!</button>
+        <div id="nextDIV" style="visibility:hidden">
+                <button onclick="diffFunction()">Next!</button>
         </div>
         
-        <form action="HCIpage.html">
+        <!-- <form action="HCIpage.html">
                 <input type="submit" value="Start Experiment!" />
-        </form>
+        </form> -->
         <script type="text/javascript">
                 
  
@@ -67,6 +68,13 @@
 <script>
         function testFunction(){
                 console.log("Test");
+        }
+        function startExperiment(){
+                var x = document.getElementById("nextDiv");
+                x.style.visibility = "visible";
+                //show the next button,
+                //do the inital generation of the svg?
+                // Set all the variables to their start value?
         }
 </script>
 

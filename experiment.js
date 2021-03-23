@@ -1,4 +1,7 @@
 {
+        function diffTest(){
+                console.log("dis works");
+        }
 
         // TODO: check proejct specs for specific size of 
         // TODO: should also be const?
