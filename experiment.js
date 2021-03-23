@@ -25,7 +25,7 @@
         var start = Date.now();
 
         // keep a reference of the canvas
-        const svg = d3.select(DOM.svg(width, height))
+        const svg = d3.select(document.getElementsByTagName('svg')[0])
 
         //TODO: replace these with parameters to the function when that is working? If that's even how this is going to be      set, instead may just be variables that are part of the logic?
         // var numValues = NB_VALUES;
