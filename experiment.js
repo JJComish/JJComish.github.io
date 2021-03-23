@@ -130,6 +130,7 @@
                 .style('fill','black')
                 .style('stroke','white')
                 }
+                //TODO: check if the node needs te be returned if we've attached to the svg on the document?
                 return svg.node()
         }
                 
