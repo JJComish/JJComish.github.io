@@ -28,10 +28,10 @@
         const svg = d3.select(DOM.svg(width, height))
 
         //TODO: replace these with parameters to the function when that is working? If that's even how this is going to be      set, instead may just be variables that are part of the logic?
-        var numValues = NB_VALUES;
-        var Rep = REPRESENTATION;
+        // var numValues = NB_VALUES;
+        // var Rep = REPRESENTATION;
         // //Entire Generation of 
-        // function generateTrial(numValues, Rep) {
+        function generateTrial(numValues, Rep) {
                 // the randomly generated set of values between 0 and 99
                 var values = d3.range(numValues).map(d => Math.floor(Math.random() * 100)) 
                 //TODO Remove debug console logs like this
@@ -131,7 +131,7 @@
                 .style('stroke','white')
                 }
                 return svg.node()
-        // }
+        }
                 
         // yield generateTrial(NB_VALUES, REPRESENTATION)
        
