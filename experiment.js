@@ -27,13 +27,15 @@ var start = Date.now();
 // keep a reference of the canvas
 var svg = d3.select(document.getElementsByTagName('svg')[0])
 
-console.log(svg)
+
 
 //TODO: replace these with parameters to the function when that is working? If that's even how this is going to be      set, instead may just be variables that are part of the logic?
 // var numValues = NB_VALUES;
 // var Rep = REPRESENTATION;
 // //Entire Generation of 
 function generateTrial(numValues, Rep) {
+
+        console.log(svg)
         // the randomly generated set of values between 0 and 99
         var values = d3.range(numValues).map(d => Math.floor(Math.random() * 100)) 
         //TODO Remove debug console logs like this
