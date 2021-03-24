@@ -23,6 +23,7 @@ const NB_VALUES = 25;
 var currRep = 0;
 var currTrial = 0;
 var start = Date.now();
+var svgbody = d3.select("body");
 
 // keep a reference of the canvas
 //var svg = d3.select(document.getElementsByTagName('svg')[0])
@@ -36,8 +37,10 @@ var start = Date.now();
 // //Entire Generation of 
 function generateTrial(numValues, Rep) {
         //var svg = d3.select(DOM.svg(width, height))
+        
         var myDOM = document.getElementsByTagName('svg')[0]
-        var svg =  d3.select("body").append("svg").attr("width", 400).attr("height", 400).append("circle").attr("cx", 25).attr("cy", 25).attr("r", 25).style("fill", "purple");
+        //TODO: Figure out adding svg, we could always just add and remove the graphs on generate?
+        var svg =  svgbody.append("svg").attr("width", 400).attr("height", 400).append("circle").attr("cx", 25).attr("cy", 25).attr("r", 25).style("fill", "purple");
 
         console.log(svg)
         // the randomly generated set of values between 0 and 99
