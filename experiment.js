@@ -12,38 +12,79 @@ const height = 400
 const MIN_VALUE = 0;
 const MAX_VALUE = 99;
 
-// TODO: replace with not using global consts but as parameters passed to the generation function
-//toggle bubble chart or text representation
-//const REPRESENTATION = "text";
-//const REPRESENTATION = "bubble";
-const REPRESENTATION = "bar";
-
 const NB_VALUES = 25;
+//TODO: remove these 
+var defaultRep = "bar";
+var defaultNum = 3;
 
 var currRep = 0;
 var currTrial = 0;
-var start = Date.now();
-var svgbody = d3.select("body");
-var svg = svgbody.append("svg").attr("width", 400).attr("height", 400);
 
-// keep a reference of the canvas
-//var svg = d3.select(document.getElementsByTagName('svg')[0])
-
-
-
-
-//TODO: replace these with parameters to the function when that is working? If that's even how this is going to be      set, instead may just be variables that are part of the logic?
-// var numValues = NB_VALUES;
-// var Rep = REPRESENTATION;
-// //Entire Generation of 
-function generateTrial(numValues, Rep) {
-        //var svg = d3.select(DOM.svg(width, height))
+// //Entire Generation of trials
+// TODO: maybe add a reset flag so start experiemnt can call this but where it resets both currRep and currTrial to 0? or I guess I could just set that in the javascript anyways...
+function generateTrial() {
         
-        var myDOM = document.getElementsByTagName('svg')[0]
-        //TODO: Figure out adding svg, we could always just add and remove the graphs on generate?
-        //var svg =  svgbody.append("svg").attr("width", 400).attr("height", 400).append("circle").attr("cx", 25).attr("cy", 25).attr("r", 25).style("fill", "purple");
+        //Default values 
+        var numValues = 4;
+        var Rep = "bubble"
 
-        console.log(svg)
+        var start = Date.now();
+
+        //TODO: remove
+        console.log(currTrial);
+        console.log(currRep);
+
+        var myDOM = document.getElementsByTagName('svg')[0]
+        var my_svg = d3.select("body").select("svg");
+       
+        my_svg.selectAll("*").remove(); //Cleanup any prior trials
+        
+        if(currTrial<3)
+        {
+                numValues = 3;
+        }
+        else if(currTrial>=3 && currTrial < 6)
+        {
+                numValues = 5;
+        }
+        else if(currTrial>=6 && currTrial < 9)
+        {
+                numValues = 9;
+        }
+        else if(currTrial >= 9 && currTrial <12)
+        {
+                numValues = 25;
+        }
+        else if(currTrial >=12)
+        {
+                currRep +=1;
+                currTrial = 0;
+        }
+        else
+        {
+        console.log("Trial Counting Error...");
+        }
+        if(currRep==0)
+        {
+                Rep = "text";
+                console.log("HELP ME");
+        }
+        else if(currRep ==1)
+        {
+                Rep = "bar";
+        }
+        else if(currRep ==2)
+        {
+                currTrial = 0;
+                //TODO: nicely cleanup and display end screen.
+        }
+        else
+        {
+                console.log("Representation handling Error...");
+        }
+
+        var svg = my_svg;
+
         // the randomly generated set of values between 0 and 99
         var values = d3.range(numValues).map(d => Math.floor(Math.random() * 100)) 
         //TODO Remove debug console logs like this
@@ -55,17 +96,35 @@ function generateTrial(numValues, Rep) {
 
         var font_size;
 
-        if(numValues == 25){
-        numCol = 5;
-        numRow = 5;
+        //TODO: fix this logic for the generation of text values 
+        if(numValues == 3)
+        {
+                numCol = 3;
+                numRow = 1;
+        }
+        else if(numValues == 5)
+        {
+                numCol = 5;
+                numRow = 1;
+        }
+        else if(numValues == 9)
+        {
+                numCol = 3;
+                numRow = 3;
+        }
+        else if(numValues == 25)
+        {
+                numCol = 5;
+                numRow = 5;
+        }
         _w = width/numCol
         _h = height/numRow
 
         bubble_min_radius = 1;// arbitrary, could be 0, or something else
         bubble_max_radius = (_w/2 - pad*2);
 
-        font_size = 48// arbitrary choice
-        }
+        font_size = 20// arbitrary choice
+
         var sign = svg.selectAll('g') // create one group element to display each value, puts it at its position
         .data(values)
         .enter()
@@ -86,9 +145,7 @@ function generateTrial(numValues, Rep) {
         var end = Date.now();
         //TODO: Trigger post to google sheet?
         console.log("clicked: ",d," with the target ", d3.max(values), " in ", Math.floor((end-start) / 1000)) 
-        start = Date.now();
-        // TODO: Figure out how to handle actually getting the d3 svg node to update on clicking...
-        //return svg.node(NB_VALUES, REPRESENTATION)
+        
         }).style('cursor','pointer')//make it a pointer on mouseover
 
         if(Rep == "bubble"){
@@ -143,6 +200,7 @@ function generateTrial(numValues, Rep) {
         .style('stroke','white')
         }
         //TODO: check if the node needs te be returned if we've attached to the svg on the document?
+        currTrial +=1;
         return svg.node()
 }
         
