@@ -10,26 +10,26 @@
 
 <!-- CSS Styling For the page goes here [replace with proper styling sheet] -->
  <style>
-	 .center {
-		margin: auto;
-  		width: 60%;
-  		padding: 10px;
-	 }
-		body {
-			background-color: lightblue;
-			}
-		h1 {
-			color: black;
-			}
-		p {
-			color : black;
-			}
+        .center {
+                margin: auto;
+                width: 60%;
+                padding: 10px;
+        }
+        body {
+                background-color: lightblue;
+        }
+        h1 {
+                color: black;
+        }
+        p {
+                color : black;
+        }
 	
-		</style>
+</style>
 
 <body>
 	<div class = "w3-container w3-blue">
-		<h1> B03 Group B Quantitative Study</h1>
+                <h1> B03 Group B Quantitative Study</h1>
 		<form action=" Projects.html">
 			<input type="submit" value="To Projects" />
 		</form>
@@ -40,31 +40,23 @@
 	</div>
 
 	<div class = "w3-container center">
-	<p>
-	**Intro to experiment, instructions on how to do stuff
-	</p>
+	        <p>
+	                **Intro to experiment, instructions on how to do stuff
+	        </p>
 	
-        <!-- Replace with a better button for triggering the start of the generation of the d3 svg generation and such? -->
-        <div id="myDIV">
-                <button onclick="startExperiment()">Start Experiment!</button>
-        </div>
-        <div id="nextDIV" style="visibility:hidden">
-                <button onclick="console.log(generateTrial(NB_VALUES,REPRESENTATION))">Next!</button>
-        </div>
-        <div id="SVGDIV">
-                <svg width = "400" height = "400">
-                        <line x1="0" y1="0" x2="400" y2 ="400" stroke="black"></line> 
-                        <line x1="0" y1="400" x2="400" y2 ="0" stroke="black"></line> 
-                </svg>
-        </div>
-        
-        <!-- <form action="HCIpage.html">
-                <input type="submit" value="Start Experiment!" />
-        </form> -->
-        <script type="text/javascript">
-                
- 
-            </script>
+                <!-- Replace with a better button for triggering the start of the generation of the d3 svg generation and such? -->
+                <div id="myDIV">
+                        <button onclick="startExperiment()">Start Experiment!</button>
+                </div>
+                <div id="nextDIV" style="visibility:hidden">
+                        <button onclick="console.log(generateTrial(NB_VALUES,REPRESENTATION))">Next!</button>
+                </div>
+                <div id="SVGDIV">
+                        <svg width = "400" height = "400">
+                                <line x1="0" y1="0" x2="400" y2 ="400" stroke="black"></line> 
+                                <line x1="0" y1="400" x2="400" y2 ="0" stroke="black"></line> 
+                        </svg>
+                </div>
 
 	</div>
 	

@@ -26,7 +26,7 @@ var start = Date.now();
 
 // keep a reference of the canvas
 //var svg = d3.select(document.getElementsByTagName('svg')[0])
-var svg = d3.select("body").append("svg").attr("width", width).attr("height", height).append("circle").attr("cx", 25).attr("cy", 25).attr("r", 25).style("fill", "purple");
+
 
 
 
@@ -35,6 +35,9 @@ var svg = d3.select("body").append("svg").attr("width", width).attr("height", he
 // var Rep = REPRESENTATION;
 // //Entire Generation of 
 function generateTrial(numValues, Rep) {
+        //var svg = d3.select(DOM.svg(width, height))
+        var myDOM = document.getElementsByTagName('svg')[0]
+        var svg =  d3.select("body").append("svg").attr("width", 400).attr("height", 400).append("circle").attr("cx", 25).attr("cy", 25).attr("r", 25).style("fill", "purple");
 
         console.log(svg)
         // the randomly generated set of values between 0 and 99
