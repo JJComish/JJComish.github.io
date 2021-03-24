@@ -58,8 +58,10 @@
                         </svg>
                 </div>
                 <script>
-                        var p = d3.select("body").append("p").text("Our First Paragraph using D3!"); 
-                        p.style({"font-size":"40px","font-family":"arial"});
+                        d3.select("body").append("p").text("Our First Paragraph using D3!").style({"font-size":"80px","font-family":"arial"}); 
+                        //var p = d3.select("body").append("p").text("Our First Paragraph using D3!"); 
+                        //TODO: Figure out why this isn't updating...
+                        //p.style({"font-size":"40px","font-family":"arial"});
                         //d3.select("body").append("svg").attr("width", 400).attr("height", 400).append("circle").attr("cx", 25).attr("cy", 25).attr("r", 25).style("fill", "purple");
                 </script>
 
