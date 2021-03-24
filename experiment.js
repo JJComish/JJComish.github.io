@@ -25,7 +25,8 @@ var currTrial = 0;
 var start = Date.now();
 
 // keep a reference of the canvas
-var svg = d3.select(document.getElementsByTagName('svg')[0])
+//var svg = d3.select(document.getElementsByTagName('svg')[0])
+var svg = d3.select("body").append("svg").attr("width", width).attr("height", height).append("circle").attr("cx", 25).attr("cy", 25).attr("r", 25).style("fill", "purple");
 
 
 
