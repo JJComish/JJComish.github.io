@@ -3,9 +3,7 @@ function diffTest(){
         console.log("dis works");
 }
 
-// TODO: check proejct specs for specific size of 
-// TODO: should also be const?
-// the canvas size
+// TODO: check proejct specs for specific size of the canvas size
 const width = 400
 const height = 400
 
@@ -13,15 +11,11 @@ const MIN_VALUE = 0;
 const MAX_VALUE = 99;
 
 const NB_VALUES = 25;
-//TODO: remove these 
-var defaultRep = "bar";
-var defaultNum = 3;
 
 var currRep = 0;
 var currTrial = 0;
 
-// //Entire Generation of trials
-// TODO: maybe add a reset flag so start experiemnt can call this but where it resets both currRep and currTrial to 0? or I guess I could just set that in the javascript anyways...
+// Entire Generation of trials
 function generateTrial() {
         
         //Default values 
@@ -77,6 +71,7 @@ function generateTrial() {
         {
                 currTrial = 0;
                 //TODO: nicely cleanup and display end screen.
+                return;
         }
         else
         {
@@ -87,8 +82,7 @@ function generateTrial() {
 
         // the randomly generated set of values between 0 and 99
         var values = d3.range(numValues).map(d => Math.floor(Math.random() * 100)) 
-        //TODO Remove debug console logs like this
-        console.log(values)
+        console.log("Trial Values: ",values)
         var pad = 5 //padding for grid layout (text and bubble)
         var numCol, numRow; // number of columns, number of rows
         var bubble_min_radius, bubble_max_radius;
@@ -96,16 +90,15 @@ function generateTrial() {
 
         var font_size;
 
-        //TODO: fix this logic for the generation of text values 
         if(numValues == 3)
         {
-                numCol = 3;
-                numRow = 1;
+                numCol = 2;
+                numRow = 2;
         }
         else if(numValues == 5)
         {
-                numCol = 5;
-                numRow = 1;
+                numCol = 3;
+                numRow = 3;
         }
         else if(numValues == 9)
         {
@@ -123,7 +116,7 @@ function generateTrial() {
         bubble_min_radius = 1;// arbitrary, could be 0, or something else
         bubble_max_radius = (_w/2 - pad*2);
 
-        font_size = 20// arbitrary choice
+        font_size = 18// arbitrary choice (shrinked from inital choice to potentially fit better in all the generated circles)
 
         var sign = svg.selectAll('g') // create one group element to display each value, puts it at its position
         .data(values)
@@ -144,7 +137,7 @@ function generateTrial() {
         }).on('click', function(d){
         var end = Date.now();
         //TODO: Trigger post to google sheet?
-        console.log("clicked: ",d," with the target ", d3.max(values), " in ", Math.floor((end-start) / 1000)) 
+        console.log("Trial: ", currTrial, " of Representation: ", Rep, " clicked: ",d.explicitOriginalTarget.__data__," with the target ", d3.max(values), " in ", Math.floor((end-start) / 1000)) 
         
         }).style('cursor','pointer')//make it a pointer on mouseover
 
@@ -199,7 +192,7 @@ function generateTrial() {
         .style('fill','black')
         .style('stroke','white')
         }
-        //TODO: check if the node needs te be returned if we've attached to the svg on the document?
+
         currTrial +=1;
         return svg.node()
 }

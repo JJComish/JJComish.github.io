@@ -52,21 +52,18 @@
                         <button onclick="console.log(generateTrial())">Next!</button>
                 </div>
                 <div id="SVGDIV">
-                        <!-- TODO: possibly remove this if we're generating the svg using d3 anyways? -->
                         <svg width = "400" height = "400">
                                 <line x1="0" y1="0" x2="400" y2 ="400" stroke="black"></line> 
                                 <line x1="0" y1="400" x2="400" y2 ="0" stroke="black"></line> 
                         </svg>
                 </div>
                 <script>
+                        //TODO: Replace either with a conclusion to the experiment or just remove
+                        // and have the conclusion appear after the final trial is done...
                         var my_p = d3.select("body").append("p").text("Our Third Paragraph using D3!");
                         my_p.style("color","red");
-                        //d3.selectAll("p").style("font-size","80px");
                         d3.selectAll("p").style("font-size","20px");
-                        //var p = d3.select("body").append("p").text("Our First Paragraph using D3!"); 
-                        //TODO: Figure out why this isn't updating...
-                        //p.style({"font-size":"40px","font-family":"arial"});
-                        //d3.select("body").append("svg").attr("width", 400).attr("height", 400).append("circle").attr("cx", 25).attr("cy", 25).attr("r", 25).style("fill", "purple");
+
                 </script>
 
 	</div>
@@ -81,9 +78,9 @@
         function startExperiment(){
                 var x = document.getElementById("nextDIV");
                 x.style.visibility = "visible";
-                //show the next button,
-                //do the inital generation of the svg?
-                // Set all the variables to their start value?
+                currTrial = 0;
+                currRep = 0;
+                generateTrial();
         }
 </script>
 
