@@ -31,7 +31,7 @@
 	<div class = "w3-container w3-blue">
                 <h1> SEng 411 B03 Group B Quantitative Study</h1>
                 <h2> By Juan Comish & Zixin Yao</h2>
-                <h3> With some code provided by Charles Perin</h3>
+                <h3> Instructed by Charles Perin & Nahin Shah</h3>
 	</div>
 
 	<div class = "w3-container center">
@@ -45,9 +45,6 @@
                 <!-- Replace with a better button for triggering the start of the generation of the d3 svg generation and such? -->
                 <div id="myDIV">
                         <button onclick="startExperiment()">Start Experiment!</button>
-                </div>
-                <div id="nextDIV" style="visibility:hidden">
-                        <button onclick="console.log(generateTrial())">Next!</button>
                 </div>
                 <div id="SVGDIV">
                         <svg width = "400" height = "400">
@@ -72,8 +69,6 @@
         }
         function startExperiment()
         {
-                var x = document.getElementById("nextDIV");
-                x.style.visibility = "visible";
                 currTrial = 0;
                 currRep = 0;
                 generateTrial();

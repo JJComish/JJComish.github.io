@@ -137,9 +137,14 @@ function generateTrial() {
 
         }).on('click', function(d){
         var end = Date.now();
+        var clicked_value = d.explicitOriginalTarget.__data__;
+        var correct_value = d3.max(values);
         //TODO: Trigger post to google sheet?
-        console.log("Trial: ", currTrial, " of Representation: ", Rep, " clicked: ",d.explicitOriginalTarget.__data__," with the target ", d3.max(values), " in ", (end-start), "ms") 
-        
+        console.log("Trial: ", currTrial, " of Representation: ", Rep, " clicked: ", clicked_value," with the target ", correct_value, " in ", (end-start), "ms") 
+        if(clicked_value == correct_value )
+        {
+                generateTrial();
+        }
         }).style('cursor','pointer')//make it a pointer on mouseover
 
         if(Rep == "bubble"){
