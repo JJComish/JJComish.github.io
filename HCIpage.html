@@ -1,6 +1,8 @@
 <!DOCTYPE html>
+<html lang="en"> 
 <html>
 <head>
+        <meta charset="utf-8"/>
 </head>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <!-- <script src="http://d3js.org/d3.v6.min.js" charset="utf-8"></script> -->
@@ -36,16 +38,45 @@
 
 	<div class = "w3-container center">
 	        <p id="Intro">
-	                **Intro to experiment, instructions on how to do stuff
+                        This is team B from B03.
+                        This is the Demo for our Assignment2 Pilot Experiment.
+                        In this experiment, our Demo will randomly generate several numbers by text or bar chart from 0 to 99 on the 400x400 screen (currently outlined with the black X below). Please select the largest number / the longest bar as soon as you see the display. Then Demo will automatically generate a new group of numbers/bars. There is a total of 24 groups in our experiment（ text:12& bar:12 ）and would take 10-15 minutes. When you see "Here is the end of the experiment" that means this experiment is done.
+                        <br>Note: Your responses are automatically sent to a google sheet. All responses are annomyous and tracked only with a UUID.
+                        <br><br>Before starting the experiment, please read the "Process" carefully below.
+                        <br>Process:
+                        <br>1. The Demo first generates the text tests. Three numbers will be shown on the screen.
+                        <br>2. Please click the largest one when you see the number
+                        <br>3. The Demo then randomly generates a new set of three numbers. Please repeat step 2.
+                        <br>4. The numbers that are generated increase from a group of three to a group of five, to a group of nine, and finally to a group of 25. Each increment will be tested in 3 trials. The total is 4 increments of 3 trials per increment = 12 trials total for the text test.
+                        <br>5. Then the Demo will move to the bar chart test. The flow of the bar chart is the same as the text test. The Demo generates three bars per trial three times, then five bars per trial, then nine per trial, and finally 25 per trial. Also 12 trials in total.
+                        <br>6. After you see the bar, please click the one you think is the longest.
+                        <br>7. The Demo will then generate a new set of bars. Please repeat step 6.
+                        <br>8. When you see "Here is the end of the experiment", it means that this Pilot Experiment is over.
 	        </p>
                 <div id = "End"> 
                 
                 </div>
+                <form name="submit-to-google-sheet">
+                        <input id = "formID" name="id" type="hidden"> 
+                        <input id = "formTrial" name = "trial" type= "hidden">
+                        <input id = "formNum" name = "numberofvalues" type= "hidden">
+                        <input id = "formRep" name = "representation" type= "hidden">
+                        <input id = "formArray" name = "values" type= "hidden">
+                        <input id = "formValue" name = "answer" type= "hidden">
+                        <input id = "formTarget" name = "target" type= "hidden">
+                        <input id = "formTime" name = "time" type= "hidden">
+                      </form>
 	
                 <!-- Replace with a better button for triggering the start of the generation of the d3 svg generation and such? -->
-                <div id="myDIV">
+                <div id="startDIV">
                         <button onclick="startExperiment()">Start Experiment!</button>
                 </div>
+                <div id="restartDIV" style = "display:none">
+                        <form action = "HCIpage.html">
+                                <input type="submit" value = "Restart Experiment!" />
+                        </form>
+                </div>
+
                 <div id="SVGDIV">
                         <svg width = "400" height = "400">
                                 <line x1="0" y1="0" x2="400" y2 ="400" stroke="black"></line> 
@@ -54,8 +85,6 @@
                 </div>
                 <script>
                         d3.selectAll("p").style("font-size","20px");
-                        
-
                 </script>
 
 	</div>
@@ -64,33 +93,11 @@
 </body>
 
 <script>
-        function testFunction(){
-                console.log("Test");
-        }
-        function startExperiment()
-        {
-                currTrial = 0;
-                currRep = 0;
-                generateTrial();
-        }
-        function endExperiment()
-        {
-                //TODO: update after the google sheet update is done.
-                var my_p = d3.select("#End").append("p").text("Thank you for finishing the experiment. If you press F12 or cntrl+shift+i you can bring up the development tools and select the console and see all the data.");
-                my_p.style("font-size","25px");
-                var intro = document.getElementById("Intro");
-                intro.style.display = "none";
-                
-                var start= document.getElementById("myDIV");
-                start.style.display = "none";
 
-               var next = document.getElementById("nextDIV");
-                next.style.display = "none";
-
-                
-
-        }
+const scriptURL = 'https://script.google.com/macros/s/AKfycbw-sOWF1OKx-k9hIDUh7nln6TE9oKvReZkGe3jNOY9TnzyYCqMMpVHQp4jqiuvke7iytg/exec'
+const form = document.forms['submit-to-google-sheet']
 </script>
+
 
 
 

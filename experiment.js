@@ -1,8 +1,4 @@
 
-function diffTest(){
-        console.log("dis works");
-}
-
 // TODO: check proejct specs for specific size of the canvas size
 const width = 400
 const height = 400
@@ -16,6 +12,8 @@ var currRep = 0;
 var currTrial = 0;
 var finished = 0;
 var my_p;
+
+
 
 // Entire Generation of trials
 function generateTrial() {
@@ -139,7 +137,20 @@ function generateTrial() {
         var end = Date.now();
         var clicked_value = d.explicitOriginalTarget.__data__;
         var correct_value = d3.max(values);
-        //TODO: Trigger post to google sheet?
+        
+        document.getElementById('formID').value = userID
+        document.getElementById('formTrial').value = currTrial
+        document.getElementById('formNum').value = numValues
+        document.getElementById('formRep').value = Rep
+        document.getElementById('formArray').value = values
+        document.getElementById('formValue').value = clicked_value
+        document.getElementById('formTarget').value = correct_value
+        document.getElementById('formTime').value = (end-start)
+
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+
         console.log("Trial: ", currTrial, " of Representation: ", Rep, " clicked: ", clicked_value," with the target ", correct_value, " in ", (end-start), "ms") 
         if(clicked_value == correct_value )
         {
@@ -201,6 +212,41 @@ function generateTrial() {
 
         currTrial +=1;
         return svg.node()
+}
+
+
+//Handling unique user IDs for each running of the experiment.
+function uuidv4() 
+{
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+          var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+          return v.toString(16);
+        });
+}
+      
+var userID = uuidv4();
+
+function startExperiment()
+{
+        currTrial = 0;
+        currRep = 0;
+        generateTrial();
+}
+function endExperiment()
+{
+        var my_p = d3.select("#End").append("p").text("Here is the end of the experiment.\n Thank you for finishing the experiment!");
+        my_p.style("font-size","25px");
+        var intro = document.getElementById("Intro");
+        intro.style.display = "none";
+        
+        var start= document.getElementById("startDIV");
+        start.style.display = "none";
+
+       var restart = document.getElementById("restartDIV");
+        restart.style.display = "block";
+
+        
+
 }
 
         
