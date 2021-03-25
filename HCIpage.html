@@ -29,20 +29,18 @@
 
 <body>
 	<div class = "w3-container w3-blue">
-                <h1> B03 Group B Quantitative Study</h1>
-		<form action=" Projects.html">
-			<input type="submit" value="To Projects" />
-		</form>
-			
-		<form action="index.html">
-			<input type="submit" value="Back to Homepage" />
-		</form>
+                <h1> SEng 411 B03 Group B Quantitative Study</h1>
+                <h2> By Juan Comish & Zixin Yao</h2>
+                <h3> With some code provided by Charles Perin</h3>
 	</div>
 
 	<div class = "w3-container center">
-	        <p>
+	        <p id="Intro">
 	                **Intro to experiment, instructions on how to do stuff
 	        </p>
+                <div id = "End"> 
+                
+                </div>
 	
                 <!-- Replace with a better button for triggering the start of the generation of the d3 svg generation and such? -->
                 <div id="myDIV">
@@ -58,11 +56,8 @@
                         </svg>
                 </div>
                 <script>
-                        //TODO: Replace either with a conclusion to the experiment or just remove
-                        // and have the conclusion appear after the final trial is done...
-                        var my_p = d3.select("body").append("p").text("Our Third Paragraph using D3!");
-                        my_p.style("color","red");
                         d3.selectAll("p").style("font-size","20px");
+                        
 
                 </script>
 
@@ -75,12 +70,30 @@
         function testFunction(){
                 console.log("Test");
         }
-        function startExperiment(){
+        function startExperiment()
+        {
                 var x = document.getElementById("nextDIV");
                 x.style.visibility = "visible";
                 currTrial = 0;
                 currRep = 0;
                 generateTrial();
+        }
+        function endExperiment()
+        {
+                //TODO: update after the google sheet update is done.
+                var my_p = d3.select("#End").append("p").text("Thank you for finishing the experiment. If you press F12 or cntrl+shift+i you can bring up the development tools and select the console and see all the data.");
+                my_p.style("font-size","25px");
+                var intro = document.getElementById("Intro");
+                intro.style.display = "none";
+                
+                var start= document.getElementById("myDIV");
+                start.style.display = "none";
+
+               var next = document.getElementById("nextDIV");
+                next.style.display = "none";
+
+                
+
         }
 </script>
 

@@ -14,19 +14,17 @@ const NB_VALUES = 25;
 
 var currRep = 0;
 var currTrial = 0;
+var finished = 0;
+var my_p;
 
 // Entire Generation of trials
 function generateTrial() {
         
         //Default values 
-        var numValues = 4;
-        var Rep = "bubble"
+        var numValues = 3;
+        var Rep = "text"
 
         var start = Date.now();
-
-        //TODO: remove
-        console.log(currTrial);
-        console.log(currRep);
 
         var myDOM = document.getElementsByTagName('svg')[0]
         var my_svg = d3.select("body").select("svg");
@@ -61,7 +59,6 @@ function generateTrial() {
         if(currRep==0)
         {
                 Rep = "text";
-                console.log("HELP ME");
         }
         else if(currRep ==1)
         {
@@ -70,7 +67,11 @@ function generateTrial() {
         else if(currRep ==2)
         {
                 currTrial = 0;
-                //TODO: nicely cleanup and display end screen.
+                if(finished!=1)
+                {
+                        endExperiment();
+                }
+                finished = 1;
                 return;
         }
         else
@@ -137,7 +138,7 @@ function generateTrial() {
         }).on('click', function(d){
         var end = Date.now();
         //TODO: Trigger post to google sheet?
-        console.log("Trial: ", currTrial, " of Representation: ", Rep, " clicked: ",d.explicitOriginalTarget.__data__," with the target ", d3.max(values), " in ", Math.floor((end-start) / 1000)) 
+        console.log("Trial: ", currTrial, " of Representation: ", Rep, " clicked: ",d.explicitOriginalTarget.__data__," with the target ", d3.max(values), " in ", (end-start), "ms") 
         
         }).style('cursor','pointer')//make it a pointer on mouseover
 
@@ -196,8 +197,6 @@ function generateTrial() {
         currTrial +=1;
         return svg.node()
 }
-        
-// yield generateTrial(NB_VALUES, REPRESENTATION)
 
         
 
