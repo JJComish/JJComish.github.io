@@ -29,23 +29,23 @@ function generateTrial() {
        
         my_svg.selectAll("*").remove(); //Cleanup any prior trials
         
-        if(currTrial<3)
+        if(currTrial<5)
         {
                 numValues = 3;
         }
-        else if(currTrial>=3 && currTrial < 6)
+        else if(currTrial>=5 && currTrial < 10)
         {
                 numValues = 5;
         }
-        else if(currTrial>=6 && currTrial < 9)
+        else if(currTrial>=10 && currTrial < 15)
         {
                 numValues = 9;
         }
-        else if(currTrial >= 9 && currTrial <12)
+        else if(currTrial >= 15 && currTrial <20)
         {
                 numValues = 25;
         }
-        else if(currTrial >=12)
+        else if(currTrial >=20)
         {
                 currRep +=1;
                 currTrial = 0;
@@ -54,13 +54,22 @@ function generateTrial() {
         {
         console.log("Trial Counting Error...");
         }
-        if(currRep==0)
+        
+        if(currRep==0 && oddEven ==0)
         {
                 Rep = "text";
         }
-        else if(currRep ==1)
+        else if(currRep==0 && oddEven ==1)
         {
                 Rep = "bar";
+        }
+        else if(currRep ==1 && oddEven ==0)
+        {
+                Rep = "bar";
+        }
+        else if(currRep ==1 && oddEven ==1)
+        {
+                Rep = "text";
         }
         else if(currRep ==2)
         {
@@ -138,6 +147,7 @@ function generateTrial() {
 
         var clicked_value = d.srcElement.__data__;
         var correct_value = d3.max(values);
+        var trialError = Math.abs((correct_value-clicked_value)/(correct_value-d3.min(values)));
         
         document.getElementById('formID').value = userID
         document.getElementById('formTrial').value = currTrial
@@ -147,6 +157,7 @@ function generateTrial() {
         document.getElementById('formValue').value = clicked_value
         document.getElementById('formTarget').value = correct_value
         document.getElementById('formTime').value = (end-start)
+        document.getElementById('formError').value = trialError
 
         fetch(scriptURL, { method: 'POST', body: new FormData(form)})
         .then(response => console.log('Success!', response))
@@ -226,6 +237,8 @@ function uuidv4()
 }
       
 var userID = uuidv4();
+var oddEven = (Math.floor(Math.random()*100))%2;
+console.log(oddEven);
 
 function startExperiment()
 {

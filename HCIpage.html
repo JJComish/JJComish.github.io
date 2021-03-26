@@ -38,20 +38,17 @@
 
 	<div class = "w3-container center">
 	        <p id="Intro">
-                        This is team B from B03.
-                        This is the Demo for our Assignment2 Pilot Experiment.
-                        In this experiment, our Demo will randomly generate several numbers by text or bar chart from 0 to 99 on the 400x400 screen (currently outlined with the black X below). Please select the largest number / the longest bar as soon as you see the display. Then Demo will automatically generate a new group of numbers/bars. There is a total of 24 groups in our experiment（text:12& bar:12）and would take 10-15 minutes. When you see "Here is the end of the experiment" that means this experiment is done.
-                        <br>Note: Your responses are automatically sent to a google sheet. All responses are annomyous and tracked only with a UUID.
-                        <br><br>Before starting the experiment, please read the "Process" carefully below.
-                        <br>Process:
-                        <br>1. The Demo first generates the text tests. Three numbers will be shown on the screen.
-                        <br>2. Please click the largest one when you see the number
-                        <br>3. The Demo then randomly generates a new set of three numbers. Please repeat step 2.
-                        <br>4. The numbers that are generated increase from a group of three to a group of five, to a group of nine, and finally to a group of 25. Each increment will be tested in 3 trials. The total is 4 increments of 3 trials per increment = 12 trials total for the text test.
-                        <br>5. Then the Demo will move to the bar chart test. The flow of the bar chart is the same as the text test. The Demo generates three bars per trial three times, then five bars per trial, then nine per trial, and finally 25 per trial. Also 12 trials in total.
-                        <br>6. After you see the bar, please click the one you think is the longest.
-                        <br>7. The Demo will then generate a new set of bars. Please repeat step 6.
-                        <br>8. When you see "Here is the end of the experiment", it means that this Pilot Experiment is over.
+
+                        Welcome! This is our remote HCI Experiment for SEng 411 at the University of Victoria.
+                        <br> In this experiment, several numbers will be randomly generate by text or bar chart from 0 to 99 on the 400x400 screen (currently outlined with the black X below). 
+                        <br> Please select the <b>largest number/ the longest bar</b> as soon as you see the display. On correct selections the experiment will automatically generate a new group of numbers/bars. There is a total of 40 trials in our experiment（text:20 & bar:20）and should take less than 5 minutes. When you see "Here is the end of the experiment" that means this experiment is done.
+                        <br><br><b>Note:</b> Your responses are automatically sent to a Google Sheet.  All responses are annomyous and tracked only with a random UUID generated for each run of the experiment. The use of browser extensions such as Privacy Badger may stop your data from being sent. 
+                        <br><br> Before starting the experiment, please read the "Process" carefully below.
+                        <br> <b>Process:</b>
+                        <br> 1. Press the "Start Experiment!" button.
+                        <br> 2. A series of values will be displayed below. (incorrect selections will be recorded but the experiment will only advance when the largest value is selected)
+                        <br> 3. Select the largest value displayed.
+                        <br> 4. Continue selecting the largest value until the experiment is finished.
 	        </p>
                 <div id = "End"> 
                 
@@ -65,6 +62,7 @@
                         <input id = "formValue" name = "answer" type= "hidden">
                         <input id = "formTarget" name = "target" type= "hidden">
                         <input id = "formTime" name = "time" type= "hidden">
+                        <input id = "formError" name = "error" type = "hidden">
                       </form>
 	
                 <!-- Replace with a better button for triggering the start of the generation of the d3 svg generation and such? -->
@@ -88,12 +86,15 @@
                 </script>
 
 	</div>
-        
-        padding-bottom: 50px;
-	
-
 </body>
-
+<section>
+        <style>
+                section{
+                        padding-bottom: 150px;
+                }
+        </style>
+        
+</section>
 <script>
 
 const scriptURL = 'https://script.google.com/macros/s/AKfycbwxcqSJXNA04VTHEM9Enn9m86Scw9BhmDRVwOZOY59oGW2XiLIo_VMH1K0aIVx6pkYu5A/exec'
