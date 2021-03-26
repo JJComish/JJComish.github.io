@@ -135,7 +135,8 @@ function generateTrial() {
 
         }).on('click', function(d){
         var end = Date.now();
-        var clicked_value = d.explicitOriginalTarget.__data__;
+
+        var clicked_value = d.srcElement.__data__;
         var correct_value = d3.max(values);
         
         document.getElementById('formID').value = userID
@@ -246,6 +247,35 @@ function endExperiment()
         restart.style.display = "block";
 
         
+
+}
+
+function checkBrowser()
+{
+        if((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1 ) 
+        {
+                return 'Opera';
+        }
+        else if(navigator.userAgent.indexOf("Chrome") != -1 )
+        {
+                return 'Chrome';
+        }
+        else if(navigator.userAgent.indexOf("Safari") != -1)
+        {
+                return 'Safari';
+        }
+        else if(navigator.userAgent.indexOf("Firefox") != -1 ) 
+        {
+                return 'Firefox';
+        }
+        else if((navigator.userAgent.indexOf("MSIE") != -1 ) || (!!document.documentMode == true )) //IF IE > 10
+        {
+                return 'IE'; 
+        }  
+        else 
+        {
+                return 'unknown';
+        }     
 
 }
 
