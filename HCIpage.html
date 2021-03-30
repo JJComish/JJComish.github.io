@@ -49,6 +49,7 @@
                         <br> 2. A series of values will be displayed below. 
                         <br> 3. Select the largest value displayed. (incorrect selections will be recorded with their error and that trial will end)
                         <br> 4. Continue selecting the largest value until the experiment is finished.
+                        <br> 5. Complete the exit survey.
 	        </p>
                 <div id = "End"> 
                 
@@ -70,9 +71,13 @@
                         <button onclick="startExperiment()">Start Experiment!</button>
                 </div>
                 <div id="restartDIV" style = "display:none">
+                        <form action = "https://docs.google.com/forms/d/e/1FAIpQLSe7k70FZKD60GuoimrZ4j5zlxUJ3vZDekCbrxqHAe0NtKNmcw/viewform?usp=sf_link">
+                                <input type="submit" value = "Exit Survey!" />
+                        </form>
                         <form action = "HCIpage.html">
                                 <input type="submit" value = "Restart Experiment!" />
                         </form>
+                        
                 </div>
 
                 <div id="SVGDIV">
