@@ -22,6 +22,7 @@ function generateTrial() {
         var numValues = 3;
         var Rep = "text"
 
+        var trialsPerN = 10;
         var start = Date.now();
 
         var myDOM = document.getElementsByTagName('svg')[0]
@@ -29,23 +30,23 @@ function generateTrial() {
        
         my_svg.selectAll("*").remove(); //Cleanup any prior trials
         
-        if(currTrial<5)
+        if(currTrial<trialsPerN)
         {
                 numValues = 3;
         }
-        else if(currTrial>=5 && currTrial < 10)
+        else if(currTrial>=trialsPerN && currTrial < 2*trialsPerN)
         {
                 numValues = 5;
         }
-        else if(currTrial>=10 && currTrial < 15)
+        else if(currTrial>=2*trialsPerN && currTrial < 3*trialsPerN)
         {
                 numValues = 9;
         }
-        else if(currTrial >= 15 && currTrial <20)
+        else if(currTrial >= 3*trialsPerN && currTrial <4*trialsPerN)
         {
                 numValues = 25;
         }
-        else if(currTrial >=20)
+        else if(currTrial >=4*trialsPerN)
         {
                 currRep +=1;
                 currTrial = 0;
@@ -164,10 +165,7 @@ function generateTrial() {
         .catch(error => console.error('Error!', error.message))
 
         console.log("Trial: ", currTrial, " of Representation: ", Rep, " clicked: ", clicked_value," with the target ", correct_value, " in ", (end-start), "ms") 
-        if(clicked_value == correct_value )
-        {
-                generateTrial();
-        }
+        generateTrial();
         }).style('cursor','pointer')//make it a pointer on mouseover
 
         if(Rep == "bubble"){
@@ -245,6 +243,8 @@ function startExperiment()
         currTrial = 0;
         currRep = 0;
         generateTrial();
+        var start= document.getElementById("startDIV");
+        start.style.display = "none";
 }
 function endExperiment()
 {
